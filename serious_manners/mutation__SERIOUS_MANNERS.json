@@ -1,0 +1,10 @@
+[
+  {
+    "type": "mutation",
+    "id": "SERIOUS_MANNERS",
+    "name": { "str": "Very Rigid Table Manners" },
+    "description": "Eating without a table and chair makes you seriously ill.",
+    "points": -2,
+    "starting_trait": true
+  }
+]

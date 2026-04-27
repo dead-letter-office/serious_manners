@@ -1,0 +1,10 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "serious_manners",
+    "name": "Very Rigid Table Manners",
+    "authors": [ "dlo" ],
+    "description": "Eating without a table and chair makes you violently ill.",
+    "dependencies": [ "dda" ]
+  }
+]

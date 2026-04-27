@@ -1,0 +1,47 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC__character_eats_impolitely",
+    "eoc_type": "EVENT",
+    "required_event": "character_eats_item",
+    "condition": { 
+      "and": [
+        "u_is_avatar",
+        { "u_has_trait": "SERIOUS_MANNERS" }
+      ]
+    },
+    "effect": [ 
+      { "u_location_variable": { "context_val": "loc" } },
+      { "math": [ "u_user_on_chair = false" ] },
+      { "math": [ "u_user_by_table = false" ] },
+      { 
+        "if": { 
+          "map_furniture_with_flag": "CAN_SIT", 
+          "loc": { "context_val": "loc" } 
+        },
+        "then": { "math": ["u_user_on_chair = true"] }
+      },
+      {
+        "u_map_run_eocs": [ { 
+          "id": "EOC__check_for_table",
+          "effect": { "math": [ "u_user_by_table = true" ] }
+        } ],
+        "store_coordinates_in": { "context_val": "loc" },
+        "condition": { 
+          "map_furniture_with_flag": "FLAT_SURF", 
+          "loc": { "context_val": "loc" } 
+        },
+        "range": 1
+      },
+      {
+        "if": { 
+          "or": [
+            { "math": [ "u_user_on_chair == false" ] },
+            { "math": [ "u_user_by_table == false" ] }
+          ]
+        },
+        "then": { "u_add_effect": "loathing", "duration": [6, 12] }
+      }    
+    ]
+  }
+]

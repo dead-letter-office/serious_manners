@@ -1,0 +1,13 @@
+[
+  {
+    "type": "effect_type",
+    "id": "loathing",
+    "name": [ "Self Loathing" ],
+    "desc": [ "You ate without a chair and table. How can you forgive yourself?" ],
+    "apply_message": "You ate food like an animal, and your body refuses to keep it down.",
+    "rating": "bad",
+    "base_mods": {
+      "vomit_chance": [ 3 ]
+    }
+  }
+]
